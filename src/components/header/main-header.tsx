@@ -1,6 +1,7 @@
 import { ModeToggle } from "@/components/modal-day-night";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import Link from "next/link";
 
 export function MainHeader() {
   return (
@@ -13,13 +14,15 @@ export function MainHeader() {
           height={100}
           className="mr-4"
         />
-        <Button
-          variant="primary"
-          size="sm"
-          className="rounded-sm hidden md:block h-auto py-1.5 px-2"
-        >
-          Text
-        </Button>
+        <Link href="/">
+          <Button
+            variant="primary"
+            size="sm"
+            className="rounded-sm hidden md:block h-auto py-1.5 px-2"
+          >
+            Home
+          </Button>
+        </Link>
       </div>
     </header>
   );
