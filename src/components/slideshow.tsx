@@ -1,5 +1,7 @@
-import * as React from "react";
+"use client";
 
+import * as React from "react";
+import Autoplay from "embla-carousel-autoplay";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Carousel,
@@ -11,7 +13,14 @@ import {
 
 export function CarouselDemo() {
   return (
-    <Carousel className=" max-w-xs">
+    <Carousel
+      plugins={[
+        Autoplay({
+          delay: 2000,
+        }),
+      ]}
+      className=" max-w-xs"
+    >
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (
           <CarouselItem key={index}>
