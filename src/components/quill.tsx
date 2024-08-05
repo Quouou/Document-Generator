@@ -16,7 +16,7 @@ const QuillEditor = () => {
     }
   }, []);
 
-  return <div ref={editorRef} style={{ height: "400px" }} />;
+  return <div ref={editorRef} className="w-full h-full" />;
 };
 
 export default QuillEditor;
