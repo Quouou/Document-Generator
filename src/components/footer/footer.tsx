@@ -13,9 +13,6 @@ export function Footer() {
           className="mr-4"
         />
       </div>
-      <div className="mr-5">
-        <ModeToggle />
-      </div>
     </header>
   );
 }

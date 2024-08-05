@@ -24,6 +24,9 @@ export function MainHeader() {
           </Button>
         </Link>
       </div>
+      <div className="mr-5">
+        <ModeToggle />
+      </div>
     </header>
   );
 }

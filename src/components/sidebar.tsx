@@ -2,8 +2,8 @@ import React from "react";
 
 export function SideBar() {
   return (
-    <aside className="w-[400px] max-w-[400px] flex flex-col flex-grow gap-2 border-l-2 border-muted p-4 bg-background overflow-y-auto">
-      Sidebar
-    </aside>
+    <div className="w-[400px] max-w-[400px] flex flex-col flex-grow gap-2  border-muted p-4 bg-background overflow-y-auto">
+      SideBar
+    </div>
   );
 }
