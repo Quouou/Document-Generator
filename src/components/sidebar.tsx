@@ -1,5 +1,6 @@
 import React from "react";
 import { templates } from "./template";
+import { Button } from "./ui/button";
 
 export function SideBar({ onSelectTemplate }) {
   return (
@@ -7,12 +8,12 @@ export function SideBar({ onSelectTemplate }) {
       <ul>
         {templates.map((template) => (
           <li key={template.id} className="mb-2">
-            <button
-              className="w-full text-left p-2 bg-white border rounded-md hover:bg-gray-100"
+            <Button
+              className="w-full text-left p-2"
               onClick={() => onSelectTemplate(template.content)}
             >
               {template.name}
-            </button>
+            </Button>
           </li>
         ))}
       </ul>
