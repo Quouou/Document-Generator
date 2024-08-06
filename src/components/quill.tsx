@@ -22,7 +22,7 @@ const QuillEditor = forwardRef((props, ref) => {
   }, []);
 
   useImperativeHandle(ref, () => ({
-    setContent: (content) => {
+    setContent: (content: string) => {
       if (quillInstance.current) {
         quillInstance.current.clipboard.dangerouslyPasteHTML(content);
       }

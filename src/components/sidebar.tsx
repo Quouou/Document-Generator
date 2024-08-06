@@ -2,7 +2,11 @@ import React from "react";
 import { templates } from "./template";
 import { Button } from "./ui/button";
 
-export function SideBar({ onSelectTemplate }) {
+export function SideBar({
+  onSelectTemplate,
+}: {
+  onSelectTemplate: (content: string) => void;
+}) {
   return (
     <div className="w-[400px] max-w-[400px] flex flex-col flex-grow gap-2 border-muted p-4 bg-background overflow-y-auto">
       <ul>
