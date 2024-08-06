@@ -1,10 +1,15 @@
 "use client";
 
-import React, { useRef, useEffect } from "react";
+import React, {
+  useRef,
+  useEffect,
+  useImperativeHandle,
+  forwardRef,
+} from "react";
 import Quill from "quill";
 import "quill/dist/quill.snow.css";
 
-const QuillEditor = () => {
+const QuillEditor = forwardRef((props, ref) => {
   const editorRef = useRef(null);
   const quillInstance = useRef<Quill | null>(null);
 
@@ -16,7 +21,17 @@ const QuillEditor = () => {
     }
   }, []);
 
-  return <div ref={editorRef} className="w-full h-full" />;
-};
+  useImperativeHandle(ref, () => ({
+    setContent: (content) => {
+      if (quillInstance.current) {
+        quillInstance.current.clipboard.dangerouslyPasteHTML(content);
+      }
+    },
+  }));
+
+  return <div ref={editorRef} className="h-full w-full" />;
+});
+
+QuillEditor.displayName = "QuillEditor";
 
 export default QuillEditor;
